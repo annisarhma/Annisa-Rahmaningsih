@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Poppins:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #FFB7C5; /* Pastel pink */
+            --secondary-color: #B2CCFF; /* Light blue */
+            --background-color: #F7F7F7; /* Light grey background */
+            --text-color: #333333; /* Dark grey */
+            --header-footer-bg: #FFB7C5; /* Pastel pink for header and footer */
+            --white: #FFFFFF; /* White */
+            --font-family: 'Noto Sans KR', sans-serif;
+            --cursive-font-family: 'Dancing Script', cursive;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+        }
+
+        #home {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            color: var(--white);
+        }
+
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Add a dark overlay */
+        }
+
+        .graphic-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--white);
+            opacity: 0.1;
+        }
+
+        .graphic-shape.shape1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+        }
+
+        .graphic-shape.shape2 {
+            width: 200px;
+            height: 200px;
+            bottom: 20%;
+            right: 15%;
+        }
+
+        .graphic-shape.shape3 {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            right: 40%;
+        }
+
+        .navbar, .footer {
+            background-color: var(--header-footer-bg);
+        }
+
+        .navbar-brand, .nav-link {
+            color: var(--white) !important;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        }
+
+        .section-heading {
+            color: var(--primary-color);
+        }
+
+        #about, #portfolio, #contact {
+            padding: 40px 0;
+        }
+
+        #about {
+            background-color: var(--white);
+            color: var(--text-color);
+            margin-top: 0px;
+            position: relative;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            position: relative;
+            gap: 10px; 
+        }
+
+        .about-text {
+            max-width: 500px;
+            margin-right: 10px;
+        }
+
+        .about-text h2 {
+            font-family: var(--cursive-font-family);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .about-image img {
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .graphic-element {
+            position: absolute;
+            background: var(--text-color);
+            opacity: 0.1;
+        }
+
+        .graphic-element.circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .graphic-element.circle1 {
+            top: 10%;
+            left: 10%;
+        }
+
+        #portfolio {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        #contact {
+            background-color: var(--white);
+        }
+
+        .card {
+            border: none;
+        }
+
+        .card-title {
+            color: var (--primary-color);
+        }
+
+        footer {
+            background-color: var(--header-footer-bg);
+            color: var(--white);
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .btn-dark {
+            background-color: var(--primary-color);
+            border: none;
+        }
+
+        .btn-dark:hover {
+            background-color: var(--secondary-color);
+        }
+
+        #home h1 {
+            font-family: var(--cursive-font-family);
+            font-size: 3rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        #home h4 {
+            font-family: var(--font-family);
+            font-size: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Portofolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portofolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="text-center text-white d-flex align-items-center justify-content-center">
+        <div>
+            <h1>Annisa Rahmaningsih</h1>
+            <h4>Student in Gunadarma University & Junior Web Dev</h4>
+        </div>
+        <div class="graphic-shape shape1"></div>
+        <div class="graphic-shape shape2"></div>
+        <div class="graphic-shape shape3"></div>
+    </section>
+
+    <section id="about">
+        <div class="container about-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="about-image">
+                        <img src="aboutme.png" alt="About Me Image" class="img-fluid rounded-circle">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="about-text">
+                        <h2>About Me</h2>
+                        <p>Active student in Semester 6 of Gunadarma University Information Systems Undergraduate Study Program. Have ability in matters
+                            leadership, public speaking, communication, able to work in a team, and easily adapt to new things. While studying
+                            I have worked on several projects creating websites, creating applications, and studying the application of Information Systems in E-Business. I have taken part in an independent study with fullstack development material</p>
+                        <a href="mailto:anisarhma55@gmail.com">anisarhma55@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="portfolio" class="bg-light">
+        <div class="container">
+            <h2 class="section-heading text-center">Portofolio</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="project1.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Aplikasi untuk mencari makna kata berbasis website</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="project2.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Aplikasi sosial media seperti Twitter dimana di dalam aplikasi ini bisa membuat postingan dan mengganti foto profil dan username, aplikasi ini berbasis website</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-heading text-center">Contact</h2>
+            <form action="submit_form.php" method="POST" class="w-75 mx-auto">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <p class="footer-text">2024 © Annisa Rahmaningsih</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
